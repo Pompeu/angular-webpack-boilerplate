@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Angular App</title>
+    <style type="text/css">
+      [ng-cloak] {
+        display: none;
+      }
+
+      .spinner {
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        background-color: #03a9f4;
+
+        border-radius: 100%;  
+        -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+        animation: sk-scaleout 1.0s infinite ease-in-out;
+      }
+
+      @-webkit-keyframes sk-scaleout {
+        0% { -webkit-transform: scale(0) }
+        100% {
+          -webkit-transform: scale(1.0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes sk-scaleout {
+        0% { 
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        } 100% {
+          -webkit-transform: scale(1.0);
+          transform: scale(1.0);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body ng-app="app">
+    <div ng-if="" class="spinner">
+    </div>
+    <div ng-cloak>
+      <div ng-controller="Main as vm">
+        <div flex-gt-sm="50" flex>
+          <md-toolbar layout="row" class="md-hue-3">
+            <div class="md-toolbar-tools">
+              <span>List Posts</span>
+            </div>
+            <div class="md-toolbar-tools">
+              <input type="text" ng-model="title"/>
+            </div>
+          </md-toolbar>
+          <md-content>
+            <md-list flex>
+              <md-list-item class="md-3-line" ng-repeat="item in vm.posts track by $index">
+                <div class="md-list-item-text" layout="column">
+                  <h2>{{item.title}}</h2>
+                  <p>{{item.body}}</p>
+                </div>
+              </md-list-item>
+           </md-content>
+        </div>
+    </div>
+    </div>
+  </body>
+</html>
