@@ -33,6 +33,16 @@ const app = {
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      output: {
+        comments: false
+      },
+      minify: {
+        html5: true,
+        removeComments: true
+      },
       minimize: true,
       optimize: true
     }),
