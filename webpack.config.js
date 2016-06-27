@@ -12,6 +12,7 @@ const app = {
     status: 'minimal'
   },
   module: {
+    preLoaders: [],
     loaders: [
       {
         test: /\.js$/,
@@ -47,5 +48,20 @@ const app = {
     })
   ]
 };
+
+if (process.env.NODE_ENV !== 'prodution') {
+  app.plugins.splice(0,1);
+
+  app.module.preLoaders.push({
+    test: /\.js$/,
+    exclude: [
+      /node_modules/,
+      /\.spec\.js$/
+    ],
+    loader: 'isparta-instrumenter'
+  });
+  app.output = {};
+  app.devtool = 'inline-source-map';
+}
 
 module.exports = app;

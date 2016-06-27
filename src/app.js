@@ -12,9 +12,8 @@ function main (Posts) {
 
   function init () {
     Posts.list()
-    .then(res => {
-      vm.posts = res.data;
-    });
+      .then(res => res.data) 
+      .then(data => vm.posts = data);
   }
 }
 
