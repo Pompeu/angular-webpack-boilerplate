@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --history-api-fallback --inline --progress",
-    "build": "rm -rf dist && node_modules/.bin/webpack --bail --progress --profile",
+    "build": "NODE_ENV=prodution rm -rf dist && node_modules/.bin/webpack --bail --progress --profile",
     "test": "karma start",
     "test-watch": "karma start --auto-watch --no-single-run"
   },

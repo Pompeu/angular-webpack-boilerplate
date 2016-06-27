@@ -1,5 +1,5 @@
 require('angular-material/angular-material.min.css');
-// require('./css/style.css');
+require('./css/style.css');
 
 const angular    = require('angular');
 const ngMaterial = require('angular-material');

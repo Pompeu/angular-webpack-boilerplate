@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
+const ENV = process.env.npm_lifecycle_event;
+
 const app = {
   entry: './src/app.js',
   output: {
@@ -31,16 +33,8 @@ const app = {
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      output: {
-        comments: false
-      },
-      minify: {
-        html5: true,
-        removeComments: true
-      }
+      minimize: true,
+      optimize: true
     }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
@@ -49,7 +43,7 @@ const app = {
   ]
 };
 
-if (process.env.NODE_ENV !== 'prodution') {
+if (ENV !== 'build') {
   app.plugins.splice(0,1);
 
   app.module.preLoaders.push({
