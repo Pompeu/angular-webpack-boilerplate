@@ -8,6 +8,8 @@ function AppCtrl (Posts) {
     return Posts.list()
       .then(data => vm.allPosts = data);
   }
+
+  vm.init()
 }
 
 AppCtrl.$inject = ['Posts']
