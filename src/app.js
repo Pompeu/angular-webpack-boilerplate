@@ -5,6 +5,7 @@ const angular    = require('angular');
 const ngMaterial = require('angular-material');
 
 const Posts = require('./services/posts');
+const Cmp = require('./components/cmp')
 
 function main (Posts) {
   const vm = this;
@@ -19,5 +20,5 @@ function main (Posts) {
 
 main.$inject = ['Posts'];
 
-module.exports = angular.module('app', [ngMaterial, Posts.name])
+module.exports = angular.module('app', [ngMaterial, Posts.name, Cmp.name])
   .controller('Main', main);
