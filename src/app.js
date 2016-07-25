@@ -1,10 +1,10 @@
 require('angular-material/angular-material.min.css');
 require('./css/style.css');
 
-const angular    = require('angular');
-const ngMaterial = require('angular-material');
+const angular    = require('angular')
+const ngMaterial = require('angular-material')
 
-const Posts = require('./services/posts');
+const Posts = require('./services/posts')
 const Cmp = require('./components/cmp')
 
 function main (Posts) {
@@ -13,7 +13,6 @@ function main (Posts) {
 
   function init () {
     Posts.list()
-      .then(res => res.data) 
       .then(data => vm.posts = data);
   }
 }

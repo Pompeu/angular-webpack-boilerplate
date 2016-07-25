@@ -2,7 +2,7 @@
 function posts ($http) {
   const root = 'http://jsonplaceholder.typicode.com';
 
-  this.list = () => $http.get(`${root}/posts/`);
+  this.list = () => $http.get(`${root}/posts/`).then(res => res.data);
 }
 
 posts.$inject = ['$http'];
