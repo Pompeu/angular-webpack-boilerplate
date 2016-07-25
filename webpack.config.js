@@ -1,13 +1,15 @@
-const webpack = require('webpack');
+const webpack           = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const crypto            = require('crypto');
+const hash              = crypto.createHash('sha256');
 
 const ENV = process.env.npm_lifecycle_event;
 
 const app = {
-  entry: './src/app.js',
+  entry:  './src/app.js',
   output: {
-    path: './dist',
-    filename: 'bundle.js'
+    path:     './dist',
+    filename: `${hash.digest('hex')}.js`
   },
   devServer: {
     contentBase: './src',
