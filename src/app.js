@@ -14,8 +14,7 @@ function main (Posts) {
 
   function init () {
     Posts.list()
-      .then(res => res.data) 
-      .then(data => vm.posts = data)
+      .then(data => vm.posts = data);
   }
 }
 
