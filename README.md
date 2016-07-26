@@ -1,4 +1,5 @@
 # angular-webpack-boilerplate
+[![Build Status](https://api.travis-ci.org/Pompeu/angular-webpack-boilerplate.svg?branch=master](https://api.travis-ci.org/Pompeu/angular-webpack-boilerplate)
 Simple boilerplate for angular 1.5
 
 # install (need nodeJS and npm)
