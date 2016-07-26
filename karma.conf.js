@@ -12,12 +12,10 @@ module.exports = function(config) {
     preprocessors: {
       'src/tests.webpack.js': ['webpack', 'sourcemap']
     },
-   
-    autoWatch: true,
 
     browsers: ['PhantomJS'],
 
-    singleRun: false,
+    singleRun: true,
 
     coverageReporter: {
       dir: 'coverage/',
