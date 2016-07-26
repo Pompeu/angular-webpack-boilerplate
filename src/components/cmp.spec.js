@@ -50,12 +50,15 @@ describe('Cmp', () => {
 
     it('should be vm.init reponse with promise', done => {
       const deferred = $q.defer()
-      deferred.resolve('ok')
+      const list = [
+        {title: 'ok',  body: 'all ok'}
+      ]
+      deferred.resolve(list)
       spyOn(posts, 'list').and.returnValue(deferred.promise)
       vm.init()
         .then(data => { 
-          expect(data).toEqual('ok')
-          expect(vm.allPosts).toEqual('ok')
+          expect(data).toEqual(list)
+          expect(vm.allPosts).toEqual(list)
           done()
         })
 
