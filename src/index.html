@@ -45,7 +45,7 @@
     </div>
     <div ng-cloak>
       <div ng-controller="Main as vm">
-        <div flex-gt-sm="50" flex>
+        <div flex>
           <md-toolbar layout="row" class="md-hue-3">
             <div class="md-toolbar-tools">
               <span>List Posts</span>
@@ -56,10 +56,10 @@
           </md-toolbar>
           <md-content>
             <md-list flex>
-              <md-list-item class="md-3-line" ng-repeat="item in vm.posts track by $index">
+              <md-list-item context item="item" class="md-3-line" ng-repeat="item in ::vm.posts track by $index">
                 <div class="md-list-item-text" layout="column">
-                  <h2>{{item.title}}</h2>
-                  <p>{{item.body}}</p>
+                  <h2>{{::item.title}}</h2>
+                  <p>{{::item.body}}</p>
                 </div>
               </md-list-item>
            </md-content>
