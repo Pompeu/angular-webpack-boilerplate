@@ -12,7 +12,7 @@ const app = {
     filename: `${hash.digest('hex')}.js`
   },
   devServer: {
-    contentBase: './src',
+    contentBase: './dist',
     status: 'minimal'
   },
   module: {
@@ -25,7 +25,7 @@ const app = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader' 
+        loader: 'style-loader!css-loader'
       },
       {
         test: /\.html$/,
@@ -56,7 +56,7 @@ const app = {
 };
 
 if (ENV !== 'build') {
-  app.plugins.splice(0,1);
+  app.plugins.splice(0, 1);
 
   app.module.preLoaders.push({
     test: /\.js$/,
