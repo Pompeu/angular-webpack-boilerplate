@@ -1,3 +1,4 @@
+'use strict';
 
 function posts ($http) {
   const root = 'http://jsonplaceholder.typicode.com';

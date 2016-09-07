@@ -6,18 +6,18 @@ function AppCtrl (Posts) {
 
   vm.init = () => {
     return Posts.list()
-      .then(data => vm.allPosts = data);
-  }
+      .then(data => (vm.allPosts = data));
+  };
 
-  vm.init()
+  vm.init();
 }
 
-AppCtrl.$inject = ['Posts']
+AppCtrl.$inject = ['Posts'];
 
 module.exports = angular.module('app.dir', ['app.posts'])
   .component('appCmp', {
-    restrict : 'E',
-    template : '<md-button> enter </md-button>',
-    controller: AppCtrl,
-    controllerAs : 'vm' 
+    restrict:     'E',
+    template:     '<md-button> enter </md-button>',
+    controller:   AppCtrl,
+    controllerAs: 'vm'
   });

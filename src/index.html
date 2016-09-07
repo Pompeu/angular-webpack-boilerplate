@@ -51,15 +51,22 @@
               <span>List Posts</span>
             </div>
             <div class="md-toolbar-tools">
-              <input type="text" ng-model="title"/>
+              <md-input-container>
+                <label> seach by title </label>
+                <input ng-model="post.title" />
+              </md-input-container>
             </div>
           </md-toolbar>
           <md-content>
             <md-list flex>
-              <md-list-item context item="item" class="md-3-line" ng-repeat="item in ::vm.posts track by $index">
+              <md-list-item 
+                context 
+                item="post" 
+                class="md-3-line" 
+                ng-repeat="post in vm.posts | filter:post track by $index">
                 <div class="md-list-item-text" layout="column">
-                  <h2>{{::item.title}}</h2>
-                  <p>{{::item.body}}</p>
+                  <h2>{{::post.title}}</h2>
+                  <p>{{::post.body}}</p>
                 </div>
               </md-list-item>
            </md-content>

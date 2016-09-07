@@ -13,22 +13,22 @@ const app = {
   },
   devServer: {
     contentBase: './dist',
-    status: 'minimal'
+    status:      'minimal'
   },
   module: {
     preLoaders: [],
-    loaders: [
+    loaders:    [
       {
-        test: /\.js$/,
+        test:    /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader:  'babel-loader'
       },
       {
-        test: /\.css$/,
+        test:   /\.css$/,
         loader: 'style-loader!css-loader'
       },
       {
-        test: /\.html$/,
+        test:    /\.html$/,
         loader: 'raw'
       }
     ]
@@ -42,7 +42,7 @@ const app = {
         comments: false
       },
       minify: {
-        html5: true,
+        html5:          true,
         removeComments: true
       },
       minimize: true,
@@ -50,7 +50,7 @@ const app = {
     }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      inject: 'body'
+      inject:   'body'
     })
   ]
 };
@@ -59,7 +59,7 @@ if (ENV !== 'build') {
   app.plugins.splice(0, 1);
 
   app.module.preLoaders.push({
-    test: /\.js$/,
+    test:    /\.js$/,
     exclude: [
       /node_modules/,
       /\.spec\.js$/

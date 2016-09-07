@@ -1,4 +1,4 @@
-module.exports = function(config) {
+module.exports = config => {
   config.set({
 
     frameworks: ['jasmine'],
@@ -18,7 +18,7 @@ module.exports = function(config) {
     singleRun: true,
 
     coverageReporter: {
-      dir: 'coverage/',
+      dir:       'coverage/',
       reporters: [
         {type: 'text-summary'},
         {type: 'html'}
