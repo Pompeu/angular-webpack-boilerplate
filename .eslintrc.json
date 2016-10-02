@@ -24,7 +24,7 @@
     "beforeEach": true
   },
   "rules": {
-    "eqeqeq": ["error", "smart"],
+    "eqeqeq": ["error", "always"],
     "camelcase": ["error", {"properties": "always"}],
     "semi": ["error","always"],
     "curly": "error",
